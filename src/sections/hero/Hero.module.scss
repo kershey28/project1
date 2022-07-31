@@ -1,0 +1,120 @@
+@use '../../styles/utilities/flow';
+@use '../../styles/abstracts/breakpoints';
+
+.container {
+  //styling
+  background-image: linear-gradient(
+    -50deg,
+    var(--clr-primary-100),
+    var(--clr-secondary-100)
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.subcontainer {
+  //position
+  position: relative;
+  z-index: 1;
+  height: 100%;
+
+  //spacing
+  padding-inline: flow.$padding-lg;
+  padding-top: flow.$padding-hg;
+
+  //layout
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8rem;
+
+  @include breakpoints.respond(tab-port) {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  @include breakpoints.respond(phone-reg) {
+    padding-inline: flow.$padding-md;
+  }
+
+  @include breakpoints.respond(phone-mini) {
+    padding-inline: flow.$padding-sm;
+  }
+}
+
+//1st child of subcontainer
+.imgBox {
+  //sizing
+  width: 100%;
+
+  //layout
+  align-self: flex-end;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  @include breakpoints.respond(tab-port) {
+    order: 2;
+    justify-content: center;
+  }
+}
+
+.img {
+  @include breakpoints.respond(phone-reg) {
+    width: clamp(30rem, 80vw, 45rem);
+  }
+}
+
+//2nd child of subcontainer
+.contentBox {
+  //layout
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+
+  //typography
+  color: var(--clr-neutral-100);
+
+  //spacing
+  margin-block: flow.$margin-md;
+
+  @include breakpoints.respond(tab-land) {
+    margin-top: 0;
+  }
+}
+
+.ctaCaption {
+  opacity: 0.6;
+}
+
+// Gooey
+.gooey {
+  position: absolute;
+  mix-blend-mode: luminosity;
+
+  &:nth-of-type(1) {
+    height: 50rem;
+    top: 15rem;
+    left: -6%;
+    transform: rotate(90deg);
+  }
+
+  &:nth-of-type(2) {
+    height: 5rem;
+    bottom: 5rem;
+    right: 10%;
+  }
+
+  &:nth-of-type(3) {
+    height: 30rem;
+    top: -15rem;
+    right: 40%;
+  }
+
+  &:nth-of-type(4) {
+    height: 10rem;
+    bottom: 15rem;
+    right: 1%;
+  }
+}

@@ -1,0 +1,31 @@
+.container {
+  min-height: 80rem;
+  margin-top: 15rem;
+}
+
+.headingBox {
+  text-align: center;
+  margin-bottom: 5rem;
+  padding-inline: 5rem;
+}
+
+.heading {
+  margin-bottom: 1.5rem;
+}
+
+.chartBox {
+  position: relative;
+}
+
+.chart {
+  width: clamp(28rem, 80vw, 130rem);
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  overflow: hidden;
+  position: absolute;
+  margin-inline: auto;
+  inset: 0;
+  border-radius: 35px;
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.15);
+}/*# sourceMappingURL=Statistics.module.css.map */

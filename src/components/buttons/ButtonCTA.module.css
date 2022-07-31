@@ -1,0 +1,33 @@
+.container {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  padding: 1.5rem 4rem;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: var(--fs-label);
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  color: var(--clr-neutral-100);
+  background-image: linear-gradient(180deg, var(--clr-tertiary-100), var(--clr-tertiary-200));
+  border-radius: 25px;
+  border: none;
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+.container:focus {
+  outline: none;
+}
+.container:hover, .container:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+.container:active {
+  transform: translateY(2px);
+}/*# sourceMappingURL=ButtonCTA.module.css.map */

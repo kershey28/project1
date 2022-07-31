@@ -1,0 +1,89 @@
+.container {
+  background-color: var(--clr-ash-100);
+  min-height: 55rem;
+  overflow: hidden;
+  padding-inline: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.subcontainer {
+  position: relative;
+  z-index: 1;
+}
+
+.contentBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 5rem;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .list {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.link {
+  font-size: var(--fs-body);
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: inherit;
+  padding-inline: 1.5rem;
+  border: 1px solid var(--clr-ash-100);
+  display: block;
+  transition: all 0.2s;
+}
+.link:hover, .link:focus {
+  transform: translateY(-3px);
+  border-bottom: 1px solid var(--clr-primary-100);
+}
+.link:focus {
+  outline: none;
+}
+.link:active {
+  transform: translateY(3px);
+}
+
+.copyright {
+  text-align: center;
+}
+
+.gooey {
+  position: absolute;
+  mix-blend-mode: multiply;
+}
+.gooey:nth-of-type(1) {
+  height: 20rem;
+  top: -7%;
+  left: -6%;
+}
+.gooey:nth-of-type(2) {
+  height: 5rem;
+  bottom: 5rem;
+  right: 3%;
+}
+.gooey:nth-of-type(3) {
+  height: 8rem;
+  top: 5%;
+  right: 10%;
+}
+.gooey:nth-of-type(4) {
+  height: 8rem;
+  bottom: -5%;
+  left: 20%;
+}/*# sourceMappingURL=Footer.module.css.map */

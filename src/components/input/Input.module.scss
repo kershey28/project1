@@ -1,0 +1,115 @@
+@use '../../styles/utilities/flow';
+@use '../../styles/abstracts/variables';
+@use '../../styles/abstracts/breakpoints';
+
+.container {
+  //layout
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+
+  //spacing
+  max-height: 8rem;
+  margin-bottom: flow.$margin-sm;
+
+  @include breakpoints.respond(tab-land) {
+    //layout
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0;
+
+    //sizing
+    max-height: none;
+    height: 100%;
+  }
+}
+
+//1st child
+.inputBox {
+  //layout
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  //others
+  padding-block: flow.$padding-md;
+  position: relative;
+
+  @include breakpoints.respond(tab-land) {
+    padding-block: flow.$padding-mn flow.$padding-sm;
+  }
+}
+
+.input {
+  //typography
+  font-size: 1.5rem;
+  font-family: inherit;
+
+  //styling
+  border-radius: 25px;
+  background-color: var(--clr-neutral-100);
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: var(--clr-neutral-300);
+  box-shadow: variables.$shadow-black-light;
+
+  //spacing
+  width: clamp(28rem, 25vw, 35rem);
+  padding: flow.$padding-mn flow.$padding-sm;
+  transition: all 0.3s;
+
+  @include breakpoints.respond(tab-land) {
+    width: clamp(28rem, 35vw, 40rem);
+  }
+
+  @include breakpoints.respond(tab-port) {
+    width: clamp(28rem, 75vw, 45rem);
+  }
+
+  &:focus {
+    box-shadow: variables.$shadow-black-dark;
+    outline: none;
+  }
+
+  &::-webkit-input-placeholder {
+    color: var(--clr-neutral-200);
+    opacity: 0.7;
+  }
+}
+
+.input:placeholder-shown + .label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+
+.label {
+  // typography
+  font-size: 1.5rem;
+  color: var(--clr-neutral-100);
+
+  //alignment
+  margin-top: 0.7rem;
+  margin-left: 3.3rem;
+  text-align: start;
+  transform: translateY(4rem);
+
+  //others
+  display: block;
+  transition: all 0.3s;
+  position: absolute;
+}
+
+// center alignment class in Tab Land Media Query
+.centerTabLand {
+  @include breakpoints.respond(tab-land) {
+    align-items: center;
+
+    & .input {
+      width: clamp(28rem, 75vw, 45rem);
+    }
+  }
+}

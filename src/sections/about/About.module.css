@@ -1,0 +1,110 @@
+.container {
+  min-height: 70rem;
+  padding: 10rem 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-width: 56.25em) {
+  .container {
+    padding-block: 8rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .container {
+    padding-inline: 5rem;
+  }
+}
+@media only screen and (max-width: 23.75em) {
+  .container {
+    padding-inline: 3rem;
+  }
+}
+
+.subcontainer {
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem 10rem;
+  grid-template-areas: "head img" "p1 img" "p2 img";
+}
+@media only screen and (max-width: 56.25em) {
+  .subcontainer {
+    grid-template-areas: "head" "img" "p1" "p2";
+  }
+}
+
+.heading {
+  grid-area: head;
+}
+
+.p1 {
+  grid-area: p1;
+}
+
+.p2 {
+  grid-area: p2;
+}
+
+.imgBox {
+  grid-area: img;
+}
+
+.imgBox {
+  position: relative;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+}
+@media only screen and (max-width: 56.25em) {
+  .imgBox {
+    margin-top: 5rem;
+  }
+}
+
+.heading,
+.p1,
+.p2 {
+  max-width: 40rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .heading,
+.p1,
+.p2 {
+    max-width: 50rem;
+  }
+}
+
+.heading {
+  color: var(--clr-neutral-300);
+}
+
+.phoneImg {
+  width: clamp(30rem, 80vw, 45rem);
+}
+
+.screenshotImg1,
+.screenshotImg2 {
+  position: absolute;
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.15);
+}
+
+.screenshotImg1 {
+  top: -5%;
+  left: -5%;
+  width: clamp(12rem, 30vw, 18rem);
+}
+@media only screen and (max-width: 23.75em) {
+  .screenshotImg1 {
+    left: -2%;
+  }
+}
+
+.screenshotImg2 {
+  top: 5%;
+  right: 5%;
+  width: clamp(10rem, 30vw, 15rem);
+}/*# sourceMappingURL=About.module.css.map */

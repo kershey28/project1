@@ -1,0 +1,109 @@
+@use '../../styles/utilities/flow';
+@use '../../styles/abstracts/breakpoints';
+
+.container {
+  //sizing
+  min-height: 70rem;
+  padding: flow.$padding-lg flow.$padding-sm;
+
+  //styling
+  background-color: var(--clr-ash-100);
+
+  //layout
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.subcontainer {
+  position: relative;
+  z-index: 1;
+}
+
+// 1st child
+.headingBox {
+  text-align: center;
+  margin-bottom: flow.$margin-md;
+
+  @include breakpoints.respond(phone-reg) {
+    padding-inline: flow.$padding-md;
+  }
+
+  @include breakpoints.respond(phone-mini) {
+    padding-inline: flow.$padding-sm;
+  }
+}
+
+.heading {
+  color: var(--clr-neutral-300);
+  margin-bottom: flow.$margin-sm;
+}
+
+//2nd child
+.contentBox {
+  //sizing
+  width: 100vw;
+  position: relative;
+
+  //layout
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 5rem 10rem;
+
+  @include breakpoints.respond(tab-land) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @include breakpoints.respond(phone-reg) {
+    padding-inline: flow.$padding-md;
+  }
+
+  @include breakpoints.respond(phone-mini) {
+    padding-inline: flow.$padding-mn;
+  }
+}
+
+//3rd child
+.img {
+  position: absolute;
+  inset: auto 0 -17rem;
+  margin-inline: auto;
+
+  @include breakpoints.respond(tab-land) {
+    position: relative;
+    margin-top: flow.$margin-hg-neg;
+  }
+}
+
+// Gooey
+.gooey {
+  position: absolute;
+  mix-blend-mode: multiply;
+
+  &:nth-of-type(1) {
+    height: 20rem;
+    top: 15rem;
+    left: -6%;
+  }
+
+  &:nth-of-type(2) {
+    height: 5rem;
+    bottom: 5rem;
+    right: 5%;
+  }
+
+  &:nth-of-type(3) {
+    height: 10rem;
+    top: 5%;
+    right: 20%;
+  }
+
+  &:nth-of-type(4) {
+    height: 8rem;
+    bottom: 5%;
+    left: 20%;
+  }
+}

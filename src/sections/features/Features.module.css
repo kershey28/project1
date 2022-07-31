@@ -1,0 +1,96 @@
+.container {
+  min-height: 70rem;
+  padding: 8rem 3rem;
+  background-color: var(--clr-ash-100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.subcontainer {
+  position: relative;
+  z-index: 1;
+}
+
+.headingBox {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .headingBox {
+    padding-inline: 5rem;
+  }
+}
+@media only screen and (max-width: 23.75em) {
+  .headingBox {
+    padding-inline: 3rem;
+  }
+}
+
+.heading {
+  color: var(--clr-neutral-300);
+  margin-bottom: 1.5rem;
+}
+
+.contentBox {
+  width: 100vw;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 5rem 10rem;
+}
+@media only screen and (max-width: 75em) {
+  .contentBox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .contentBox {
+    padding-inline: 5rem;
+  }
+}
+@media only screen and (max-width: 23.75em) {
+  .contentBox {
+    padding-inline: 1.5rem;
+  }
+}
+
+.img {
+  position: absolute;
+  inset: auto 0 -17rem;
+  margin-inline: auto;
+}
+@media only screen and (max-width: 75em) {
+  .img {
+    position: relative;
+    margin-top: -15rem;
+  }
+}
+
+.gooey {
+  position: absolute;
+  mix-blend-mode: multiply;
+}
+.gooey:nth-of-type(1) {
+  height: 20rem;
+  top: 15rem;
+  left: -6%;
+}
+.gooey:nth-of-type(2) {
+  height: 5rem;
+  bottom: 5rem;
+  right: 5%;
+}
+.gooey:nth-of-type(3) {
+  height: 10rem;
+  top: 5%;
+  right: 20%;
+}
+.gooey:nth-of-type(4) {
+  height: 8rem;
+  bottom: 5%;
+  left: 20%;
+}/*# sourceMappingURL=Features.module.css.map */

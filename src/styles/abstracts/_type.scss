@@ -1,0 +1,67 @@
+@use 'breakpoints';
+
+///////////////////////////////////////////
+// Variables
+
+/* Font Sizes  */
+$type-scale: (
+  'regular': (
+    'display': clamp(5rem, 8rem, 10rem),
+    'heading': 3.6rem,
+    'label': 1.8rem,
+    'body': 1.6rem,
+    'caption': 1.4rem,
+  ),
+  'small': (
+    'display': 5rem,
+    'heading': 2.4rem,
+    'label': 1.8rem,
+    'body': 1.6rem,
+    'caption': 1.4rem,
+  ),
+);
+
+:root {
+  /* Font Sizes  */
+  @each $screen-size, $font-size in $type-scale {
+    @if $screen-size == 'regular' {
+      @each $size, $value in $font-size {
+        --fs-#{$size}: #{$value};
+      }
+    } @else {
+      @include breakpoints.respond(phone-reg) {
+        @each $size, $value in $font-size {
+          --fs-#{$size}: #{$value};
+        }
+      }
+    }
+  }
+
+  /* Font Family */
+  --ff-primary: 'Rubik', sans-serif;
+}
+
+///////////////////////////////////////////
+// Headings
+.heading-1 {
+  font-size: var(--fs-heading);
+  font-weight: 400;
+  line-height: 1.28;
+  text-transform: capitalize;
+}
+
+.heading-2 {
+  font-size: var(--fs-label);
+  font-weight: 400;
+  line-height: 1.34;
+}
+
+.paragraph-1 {
+  font-size: var(--fs-label);
+  line-height: 1.45;
+}
+
+.caption {
+  font-size: var(--fs-caption);
+  opacity: 0.5;
+}

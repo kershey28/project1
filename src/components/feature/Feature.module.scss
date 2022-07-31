@@ -1,0 +1,35 @@
+@use '../../styles/utilities/flow';
+@use '../../styles/abstracts/breakpoints';
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+// 1st child
+.contentBox {
+  max-width: 30rem;
+
+  @include breakpoints.respond(tab-land) {
+    max-width: 40rem;
+  }
+}
+
+.heading {
+  margin-bottom: flow.$margin-sm;
+  color: var(--clr-neutral-300);
+}
+
+// imgRight Class
+.imgRight {
+  text-align: right;
+  & .contentBox {
+    order: 1;
+  }
+
+  & .imgBox {
+    order: 2;
+  }
+}

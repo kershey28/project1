@@ -1,0 +1,60 @@
+.container {
+  background-image: linear-gradient(-50deg, var(--clr-primary-100), var(--clr-secondary-100));
+  min-height: 45rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+@media only screen and (max-width: 37.5em) {
+  .container {
+    padding-inline: 5rem;
+  }
+}
+@media only screen and (max-width: 23.75em) {
+  .container {
+    padding-inline: 3rem;
+  }
+}
+
+.subcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+  z-index: 1;
+  color: var(--clr-neutral-100);
+  text-align: center;
+}
+
+.heading {
+  margin-bottom: 1.5rem;
+}
+
+.gooey {
+  position: absolute;
+  mix-blend-mode: luminosity;
+}
+.gooey:nth-of-type(1) {
+  height: 35rem;
+  bottom: -15%;
+  right: -6%;
+}
+.gooey:nth-of-type(2) {
+  height: 10rem;
+  bottom: 5rem;
+  left: 5%;
+}
+.gooey:nth-of-type(3) {
+  height: 30rem;
+  top: -15rem;
+  left: 10%;
+}
+.gooey:nth-of-type(4) {
+  height: 5rem;
+  top: 5%;
+  right: 1%;
+}/*# sourceMappingURL=Cta.module.css.map */

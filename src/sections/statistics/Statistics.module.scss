@@ -1,0 +1,39 @@
+@use '../../styles/abstracts/variables';
+@use '../../styles/utilities/flow';
+
+.container {
+  min-height: 80rem;
+  margin-top: flow.$margin-hg;
+}
+
+//1st child
+.headingBox {
+  text-align: center;
+  margin-bottom: flow.$margin-md;
+  padding-inline: flow.$padding-md;
+}
+
+.heading {
+  margin-bottom: flow.$margin-sm;
+}
+
+//2nd child
+.chartBox {
+  position: relative;
+}
+
+.chart {
+  //sizing
+  width: clamp(28rem, 80vw, 130rem);
+  height: min-content;
+  overflow: hidden;
+
+  //alignment
+  position: absolute;
+  margin-inline: auto;
+  inset: 0;
+
+  //styling
+  border-radius: 35px;
+  box-shadow: variables.$shadow-black-light;
+}

@@ -1,0 +1,118 @@
+@use '../../styles/abstracts/variables';
+@use '../../styles/utilities/flow';
+@use '../../styles/abstracts/breakpoints';
+
+.container {
+  //sizing
+  min-height: 70rem;
+  padding: flow.$padding-xl flow.$padding-lg;
+
+  //layout
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include breakpoints.respond(tab-port) {
+    padding-block: flow.$padding-lg;
+  }
+
+  @include breakpoints.respond(phone-reg) {
+    padding-inline: flow.$padding-md;
+  }
+
+  @include breakpoints.respond(phone-mini) {
+    padding-inline: flow.$padding-sm;
+  }
+}
+
+.subcontainer {
+  //sizing
+  height: min-content;
+
+  //layout
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem 10rem;
+  grid-template-areas:
+    'head img'
+    'p1 img'
+    'p2 img';
+
+  @include breakpoints.respond(tab-port) {
+    grid-template-areas:
+      'head'
+      'img'
+      'p1'
+      'p2';
+  }
+}
+
+// grid-children
+.heading {
+  grid-area: head;
+}
+
+.p1 {
+  grid-area: p1;
+}
+
+.p2 {
+  grid-area: p2;
+}
+
+.imgBox {
+  grid-area: img;
+}
+
+// children of subcontainer
+.imgBox {
+  //position
+  position: relative;
+  height: min-content;
+
+  @include breakpoints.respond(tab-port) {
+    margin-top: flow.$margin-md;
+  }
+}
+
+.heading,
+.p1,
+.p2 {
+  max-width: 40rem;
+
+  @include breakpoints.respond(tab-port) {
+    max-width: 50rem;
+  }
+}
+
+.heading {
+  color: var(--clr-neutral-300);
+}
+
+// children of imgBox
+.phoneImg {
+  width: clamp(30rem, 80vw, 45rem);
+}
+
+.screenshotImg1,
+.screenshotImg2 {
+  position: absolute;
+  box-shadow: variables.$shadow-black-light;
+}
+
+.screenshotImg1 {
+  top: -5%;
+  left: -5%;
+  width: clamp(12rem, 30vw, 18rem);
+
+  @include breakpoints.respond(phone-mini) {
+    left: -2%;
+  }
+}
+
+.screenshotImg2 {
+  top: 5%;
+  right: 5%;
+  width: clamp(10rem, 30vw, 15rem);
+}
