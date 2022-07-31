@@ -1,5 +1,7 @@
 # Responsive Website Task
 
+Live Website Link: https://oqulo1-kershey.netlify.app/
+
 Task assigned to: Kershey Carino by Sir Thors
 
 Added Functionalities
